@@ -32,6 +32,7 @@ app.use(function(req,res,next)
 app.use("/home",require("./controllers/home"));
 app.use("/login",require("./controllers/login"))
 app.use("/members",require("./controllers/members"));
+app.use("/games",require("./controllers/games"));
 
 
 app.get("/",function(req,res)

@@ -1,0 +1,20 @@
+{{>header}}
+{{>navigation}}
+<div id="games">
+    <h2>Games Area</h2>
+
+    {{#games}}
+        <ul>
+            
+                <div class="gameCard">
+                    <strong>{{title}}</strong>
+                    <p>{{description}}</p>
+                    <span>Price: {{price}}</span>
+                    <span>Number on Hand: {{numberonhand}}</span>
+                </div>
+
+            
+        </ul>
+    {{/games}}
+</div>
+{{>footer}}
