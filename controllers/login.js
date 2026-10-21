@@ -22,6 +22,8 @@ router.post("/attemptlogin",async function(req,res)
     {
         req.session.username = user.username;
         req.session.level = user.level;
+        req.TPL.membersnav=true;
+
         res.redirect("/members");
     }
     else 

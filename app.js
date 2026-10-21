@@ -26,6 +26,29 @@ app.use(function(req,res,next)
 
     next();
 });
+ /////////// nav link highlighting
+app.use("/home",function(req,res,next)
+{
+    req.TPL.homenav = true;next();
+});
+
+app.use("/games",function(req,res,next)
+{
+    req.TPL.gamesnav=true;
+    next();
+});
+
+app.use("/login",function(req,res,next)
+{
+    req.TPL.loginnav=true;
+    next();
+});
+
+app.use("/members",function(req,res,next)
+{
+    req.TPL.membersnav=true;
+    next();
+}); 
 
 
 
