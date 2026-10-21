@@ -1,5 +1,6 @@
 const express = require('express');
 var router = express.Router();
+const UsersModel = require('../models/users.js');
 
 
 
@@ -14,25 +15,9 @@ router.get("/",async function(req,res)
 router.post("/attemptlogin",async function(req,res)
 {
     // put user check code here 
+    const user = await UsersModel.getUserByCredentials(req.body.username,req.body.password);
 
-    console.log("attempt login");
-    console.log(req.body.username);
-    console.log(req.body.password);
-    let inputUser=req.body.username;
-    let inputPassword=req.body.password;
-    if (inputUser=="username" && inputPassword=="password")
-    {
-        req.session.username=inputUser;
-        req.session.level = "editor";
-        res.redirect("/members");
-    }
-    else 
-    {
-        req.session.login_error="Invalid user name or password";
-        res.redirect("/login");
-    }
-
-    /*
+    
     if (user)
     {
         req.session.username = user.username;
@@ -44,7 +29,7 @@ router.post("/attemptlogin",async function(req,res)
         req.session.login_error="Invalid user name or password";
         res.redirect("/login");
     }
-        */
+        
 });
 
 

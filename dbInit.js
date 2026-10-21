@@ -8,6 +8,14 @@ db.serialize(function()
     db.run("INSERT INTO Games VALUES(?,?,?,?,?)",['Monopoly','a Capitalism Game','Parker Brothers','29.95','15']);
     db.run("INSERT INTO Games VALUES(?,?,?,?,?)",['Catan','A Settlers Game','Germania','49.95','10']);
     db.run("INSERT INTO Games VALUES(?,?,?,?,?)",['Clue','A Game Where You Solve Murders','Milton Bradley?','39.99','11']);
+
+
+    db.run("DROP TABLE IF EXISTS Users");
+    db.run("CREATE TABLE Users (username TEXT,password TEXT,level TEXT)");
+    db.run("INSERT INTO Users VALUES(?,?,?)",["username","password","editor"]);
 });
+
+
+
 
 
