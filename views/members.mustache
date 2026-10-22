@@ -1,11 +1,24 @@
 {{>header}}
 {{>navigation}}
+ {{#games}}
+        <ul>
+                <script>
+                    function testFunction(inputValue)
+                    {
+                        console.log("testFunction" + inputValue);
+                    }
 
+                </script>
+                <div class="gameCard">
+                   <button onclick=testFunction() id={{title}}>Edit</button> <strong>{{title}}</strong>{{company}}
+                    <p>{{description}}</p>
+                    <span>Price: {{price}}</span>
+                    <span>Number on Hand: {{numberonhand}}</span>
+                </div>
 
-<div class="members">
-    <h2>Members Page (restricted) </h2>
-</div>
-
-
+            
+        </ul>
+    {{/games}}
+        <button id="addButton">Add New Game Entry</button>
 {{>footer}}
 

@@ -24,7 +24,7 @@ router.post("/attemptlogin",async function(req,res)
         req.session.level = user.level;
         req.TPL.membersnav=true;
 
-        res.redirect("/members");
+        res.redirect("/home");
     }
     else 
     {
