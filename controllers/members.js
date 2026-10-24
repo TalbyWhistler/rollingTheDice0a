@@ -12,9 +12,5 @@ router.get("/",async function(req,res)
 });
 
 
-function testFunction()
-{
-    console.log("testFunction");
-}
 
 module.exports = router;

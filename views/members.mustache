@@ -2,20 +2,17 @@
 {{>navigation}}
  {{#games}}
         <ul>
-                <script>
-                    function testFunction(inputValue)
-                    {
-                        console.log("testFunction" + inputValue);
-                    }
-
-                </script>
-                <div class="gameCard">
-                   <button onclick=testFunction() id={{title}}>Edit</button> <strong>{{title}}</strong>{{company}}
+            <li>
+            <form action="/editgame">
+                <div class="gameCard" id='{{title}}'>
+                   <strong>{{title}}</strong>{{company}}
                     <p>{{description}}</p>
                     <span>Price: {{price}}</span>
                     <span>Number on Hand: {{numberonhand}}</span>
                 </div>
-
+                <button>Edit</button>
+            </form>
+            </li>
             
         </ul>
     {{/games}}

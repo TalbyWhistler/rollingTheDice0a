@@ -56,6 +56,7 @@ app.use("/home",require("./controllers/home"));
 app.use("/login",require("./controllers/login"))
 app.use("/members",require("./controllers/members"));
 app.use("/games",require("./controllers/games"));
+app.use("/editgame",require("./controllers/editgame"));
 
 
 app.get("/",function(req,res)
