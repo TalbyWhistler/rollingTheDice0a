@@ -21,9 +21,6 @@ async function getAllGames()
 }
 
 
-
-
-
 module.exports=
 {
     getAllGames
