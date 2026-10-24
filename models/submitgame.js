@@ -32,5 +32,17 @@ async function submitgame(title,description,company,price,numberonhand)
     
 }
 
+async function submitnew(title,description,company,price,numberonhand)
+{
+    console.log("submit new ");
+    await db.run("insert into games(title,description,company,price,numberonhand) values(?,?,?,?,?)",[title,description,company,price,numberonhand]);
+}
 
-module.exports = { submitgame };
+async function deletegame(title)
+{
+    console.log('delete game ',title);
+    await db.run("delete from games where title=?",[title]);
+}
+
+
+module.exports = { submitgame,deletegame,submitnew };

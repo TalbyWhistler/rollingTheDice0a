@@ -4,8 +4,8 @@ const SubmitGameModel = require('../models/submitgame.js');
 
 router.post("/",function(req,res)
 {
-    console.log("SUBMIT EDIT FILE?");
-    console.log(req.body.title);
+    //console.log("SUBMIT EDIT FILE?");
+    //console.log(req.body.title);
 
 
     let title=req.body.title;
@@ -13,8 +13,15 @@ router.post("/",function(req,res)
     let company=req.body.company;
     let price=req.body.price;
     let numberonhand=req.body.numberonhand;
-
-    SubmitGameModel.submitgame(title,description,company,price,numberonhand);
+    if(numberonhand==0)
+    {
+        console.log("Should delete this!")
+        SubmitGameModel.deletegame(title);
+    }
+    else 
+    {
+            SubmitGameModel.submitgame(title,description,company,price,numberonhand);
+    }
 
 
 

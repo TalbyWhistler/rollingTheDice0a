@@ -3,10 +3,17 @@
 <h3>and the game</h3>
 {{#gameinfo}}
     <form method="post" action="/submitedit">
+    <label for="title">Title</label>
         <input name="title" value='{{title}}'>
+    <label for="description">Description</label>
+
         <input name="description" value='{{description}}'>
+    <label for="company">Company</label>
+        
         <input name="company" value='{{company}}'>
+    <label for="price">Price</label>
         <input name="price" value='{{price}}'>
+     <label for="numberonhand">Number on Hand</label>
         <input name="numberonhand" value='{{numberonhand}}'>
         <button>Submit</button>
     </form>

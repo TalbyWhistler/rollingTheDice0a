@@ -19,10 +19,10 @@ router.get("/:id",async function(req,res)
 
 });
 
-
+/*
 router.get("/submitedit",function(req,res)
 {
     console.log("SUBMIT EDIT");
 });
-
+*/
 module.exports = router;
