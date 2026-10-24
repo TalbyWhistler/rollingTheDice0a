@@ -15,14 +15,14 @@ module.exports = {
             const have=await GameModel.getOneGame(value);
             console.log(have);
             
-            if (have)
+            if (have[0])
             {
                 outputMessage=`Yes it's described as a ${have[0]['description']}`;
                 return interaction.reply(outputMessage);
             }
             else 
             {
-                return interaction.reply(`No value detected`);
+                return interaction.reply(`No I don't think we have that one!`);
             }
                 
             return interaction.reply(`coming soon for game \`${value}\``);
