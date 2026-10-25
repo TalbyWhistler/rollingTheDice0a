@@ -5,7 +5,8 @@
             <li>
             <form action="/editgame/{{title}}">
                 <div class="gameCard" id='{{title}}'>
-                   <strong>{{title}}</strong>{{company}}
+                   <strong>{{title}}</strong>
+                   <p>{{company}}</p>
                     <p>{{description}}</p>
                     <span>Price: {{price}}</span>
                     <span>Number on Hand: {{numberonhand}}</span>
@@ -19,7 +20,7 @@
     <form action="/addgame">
          <button id="addButton">Add New Game Entry</button>
     </form>
-
+    <p><strong>Chat Monitor</strong></p>
     <ul id="messages"></ul>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
