@@ -20,6 +20,23 @@
          <button id="addButton">Add New Game Entry</button>
     </form>
 
-       
+    <ul id="messages"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+   
+   
+   <script>      
+      
+      // create the connection
+      var socket = io();      
+
+      
+      socket.on('botactivity', function(msg) {
+                  
+        $('#messages').append($('<li>').text(msg));
+      }); 
+         
+    </script>
+    
 {{>footer}}
 
