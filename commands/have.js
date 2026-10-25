@@ -1,6 +1,12 @@
 const { SlashCommandBuilder } = require('discord.js');
 const GameModel = require('../models/game.js');
 
+
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('have')
@@ -9,6 +15,7 @@ module.exports = {
 	async execute(interaction) {
         const value = interaction.options.getString('game');
         let outputMessage = '';
+        
         if (value)
         {
             console.log(value);
